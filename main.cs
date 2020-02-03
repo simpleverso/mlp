@@ -9,7 +9,7 @@ class ejemplo
 	static void Main(string[] args)
 	{
 		double[,] patrones = { {0,0}, {0,0}, {0, 1},{1, 0},{1, 1}}; //el primero no cuenta
-		double[,] salidas = { {0}, {0}, {1},{1},{0}};
+		double[,] salidas = { {0}, {0}, {1}, {1}, {0}};
 		int[] arquitectura = {0,2,3,1}; // el primero no cuenta
 		perceptron.C = 3;
 		perceptron.n = arquitectura;
@@ -19,11 +19,11 @@ class ejemplo
 		perceptron.alfa = 0.6;
 		perceptron.x = patrones;
 		perceptron.y = salidas;
-		perceptron.yd = new double[perceptron.num_patrones + 1, perceptron.n[perceptron.C] + 1];
+		
 		
 		perceptron.entrenar();
 		
-		double[] x = new double[] { 0, 0};
+		double[] x = {0,0};
 		double[] y = perceptron.Test(x);
 		foreach (var item in y)
 		{
@@ -56,7 +56,7 @@ public class perceptron
 	{
 		//restantes
 			
-			
+		yd = new double[num_patrones + 1, n[C] + 1];
 			
 		//restantes
 		
