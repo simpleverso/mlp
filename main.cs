@@ -8,14 +8,8 @@ class ejemplo
 {
 	static void Main(string[] args)
 	{
-		double[] patrones = new double[] { 
-		0, 0; 
-		0, 1; 
-		1, 0; 
-		1, 1};
-		
-		
-		rna_pmc.entrenar();
+		double[,] patrones = { {0,0}, {0, 1},{1, 0},{1, 1}};
+		perceptron.entrenar();
 		
 		double[] x = new double[] { 0, 0};
 		double[] y;
@@ -30,22 +24,22 @@ class ejemplo
 
 public class perceptron
 {
-	private static int C, numiter, num_patrones;
-	private static int[] n;
-	private static double alfa, emin;
-	private static double[,] x;
-	private static double[,] y;
-	private static double[,] yd;
-	private static double[, ,] winicial;
-	private static double[, ,] w;
-	private static double[,] a;
-	private static double[,] u;
-	private static double[,] delta;
+	public static int C, numiter, num_patrones;
+	public static int[] n;
+	public static double alfa, emin;
+	public static double[,] x;
+	public static double[,] y;
+	public static double[,] yd;
+	public static double[, ,] winicial;
+	public static double[, ,] w;
+	public static double[,] a;
+	public static double[,] u;
+	public static double[,] delta;
 
-	private static double[] xmax;
-	private static double[] xmin;
-	private static double[] ymax;
-	private static double[] ymin;
+	public static double[] xmax;
+	public static double[] xmin;
+	public static double[] ymax;
+	public static double[] ymin;
 
 	public static void entrenar(String nombre_archivo)
 	{
