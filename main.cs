@@ -8,11 +8,18 @@ class ejemplo
 {
 	static void Main(string[] args)
 	{
-		rna_pmc.entrenar_pmc(@".\funcion.ppm");
+		double[] patrones = new double[] { 
+		0, 0; 
+		0, 1; 
+		1, 0; 
+		1, 1};
 		
-		double[] x = new double[] { 0.0, 250, 95, 49, 20 };
+		
+		rna_pmc.entrenar();
+		
+		double[] x = new double[] { 0, 0};
 		double[] y;
-		y = rna_pmc.reconocer_pmc(x);
+		y = perceptron.reconocer_pmc(x);
 		foreach (var item in y)
 		{
 			Console.WriteLine(item);
@@ -21,7 +28,7 @@ class ejemplo
 	}
 }
 
-public class rna_pmc
+public class perceptron
 {
 	private static int C, numiter, num_patrones;
 	private static int[] n;
@@ -40,7 +47,7 @@ public class rna_pmc
 	private static double[] ymax;
 	private static double[] ymin;
 
-	public static void entrenar_pmc(String nombre_archivo)
+	public static void entrenar(String nombre_archivo)
 	{
 		int i, j, k, c, aux, p;
 		double error_total = 1;
