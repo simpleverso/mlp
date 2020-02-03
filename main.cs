@@ -8,52 +8,19 @@ class ejemplo
 {
 	static void Main(string[] args)
 	{
-		double[,] patrones = { {0,0}, {0, 1},{1, 0},{1, 1}};
-		double[,] salidas = { 0, 1,1,0};
-		int[] arquitectura = {2,3,1};
+		double[,] patrones = { {0,0}, {0,0}, {0, 1},{1, 0},{1, 1}}; //el primero no cuenta
+		double[,] salidas = { {0}, {0}, {1},{1},{0}};
+		int[] arquitectura = {0,2,3,1}; // el primero no cuenta
 		perceptron.C = 3;
 		perceptron.n = arquitectura;
 		perceptron.num_patrones = 4;
 		perceptron.numiter = 1000;
 		perceptron.emin = 0.01;
 		perceptron.alfa = 0.6;
-		x = new double[num_patrones + 1, perceptron.n[1] + 1]; //analizar
-		perceptron.x = x ;
+		perceptron.x = patrones;
 		perceptron.y = salidas;
+		perceptron.yd = new double[perceptron.num_patrones + 1, perceptron.n[perceptron.C] + 1];
 		
-//			
-//	 x = new double[num_patrones + 1, n[1] + 1];
-//
-//		for (i = 1; i <= num_patrones; i++)
-//		{
-//			texto = leer.ReadLine();
-//			if (n[1] == 1)
-//				datos = texto.Split('\n');
-//			else
-//				datos = texto.Split('\t');
-//			for (j = 1; j <= n[1]; j++)
-//			{
-//				x[i, j] = Convert.ToDouble(datos[j - 1]);
-//			}
-//		}
-//
-//		texto = leer.ReadLine();
-//		y = new double[num_patrones + 1, n[C] + 1];
-//		yd = new double[num_patrones + 1, n[C] + 1];
-//
-//		for (i = 1; i <= num_patrones; i++)
-//		{
-//			texto = leer.ReadLine();
-//			if (n[C] == 1)
-//				datos = texto.Split('\n');
-//			else
-//				datos = texto.Split('\t');
-//			for (j = 1; j <= n[C]; j++)
-//			{
-//				y[i, j] = Convert.ToDouble(datos[j - 1]);
-//			}
-//		}	
-
 		perceptron.entrenar();
 		
 		double[] x = new double[] { 0, 0};
@@ -87,6 +54,12 @@ public class perceptron
 
 	public static void entrenar()
 	{
+		//restantes
+			
+			
+			
+		//restantes
+		
 		int i, j, k, c, aux, p;
 		double error_total = 1;
 
