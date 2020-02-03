@@ -9,12 +9,16 @@ class ejemplo
 	static void Main(string[] args)
 	{
 		double[,] patrones = { {0,0}, {0, 1},{1, 0},{1, 1}};
-		perceptron.C = 2;
+		double[,] salidas = { {0}, {1},{1},{0}};
+		int[] arquitectura = {2,3,1};
+		perceptron.C = 3;
+		perceptron.n = arquitectura;
 		perceptron.num_patrones = 4;
 		perceptron.numiter = 1000;
 		perceptron.emin = 0.01;
 		perceptron.alfa = 0.6;
 		perceptron.x = patrones;
+		perceptron.y = salidas;
 		
 		perceptron.entrenar();
 		
