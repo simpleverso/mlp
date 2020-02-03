@@ -7,12 +7,7 @@ Perceptron multicapa desde cero una implementacion en c# [**Simpleverso**].
 - Ninguna
 ```
 
-<p float="left">
-	<img src="https://i.imgur.com/nF02pxn.jpg" width="49%" />
-	<img src="https://i.imgur.com/OSEEYIj.jpg" width="49%" />
-</p>
-
-### Explicacion
+## Explicacion
 
 Add this to your package's pubspec.yaml file:
 
@@ -21,7 +16,7 @@ dependencies:
 	equinox: ^0.3.3
 ```
 
-### iniciacion de la red
+## iniciacion de la red
 
 You can install packages from the command line:
 
@@ -29,7 +24,7 @@ You can install packages from the command line:
 $ flutter pub get
 ```
 
-### funcion de transferencia
+## funcion de transferencia
 
 Now in your Dart code, you can use:
 
@@ -37,7 +32,7 @@ Now in your Dart code, you can use:
 import 'package:equinox/equinox.dart';
 ```
 
-### propagacion
+## propagacion
 
 You have to replace `MaterialApp` or `CupertinoApp` with `EquinoxApp`.
 
@@ -70,20 +65,12 @@ Widget build(BuildContext context) {
 }
 ```
 
-### retropropagacion
+## retropropagacion
 
-**Equinox** 
-
-
-## Customization
-
-Customization is done using [stylist](https://github.com/kekland/stylist). I will write a guide on styling your app soon.
-
-## Other Eva Design implementations
-
-- [**Angular**](https://github.com/akveo/nebular)
-- [**React Native**](https://github.com/akveo/react-native-ui-kitten)
-
+<p float="left">
+	<img src="https://i.imgur.com/nF02pxn.jpg" width="49%" />
+	<img src="https://i.imgur.com/OSEEYIj.jpg" width="49%" />
+</p>
 
 ## Algoritmo Tomado Del libro:
 
