@@ -4,6 +4,7 @@ class Untitled
 {
 	static void Main(string[] args)
 	{
+		Aplicacion_perceptron.rna_pmc algo = new Aplicacion_perceptron.rna_pmc();
 		rna_pmc.leer_archivo_pmc(@".\funcion.pml");
 		rna_pmc.entrenar_pmc(@".\funcion.ppm");
 		
