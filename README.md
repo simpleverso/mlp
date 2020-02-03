@@ -1,20 +1,14 @@
 # MLP - Multi Layer Perceptron
-Perceptron multicapa desde cero una implementacion en c# [**Eva Design**](https://eva.design).
+Perceptron multicapa desde cero una implementacion en c# [**Simpleverso**].
 
-#Simpleverso
-[<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://eva.design)
-[![Pub](https://img.shields.io/pub/vpre/equinox.svg)](https://pub.dev/packages/equinox)
+## Dependencias
 
-
-## Screenshots
+- Ninguna
 
 <p float="left">
 	<img src="https://i.imgur.com/nF02pxn.jpg" width="49%" />
 	<img src="https://i.imgur.com/OSEEYIj.jpg" width="49%" />
-	<img src="https://i.imgur.com/alMhkL8.jpg" width="49%" />
-	<img src="https://i.imgur.com/z7UEPAM.jpg" width="49%" />
 </p>
-
 
 ### Explicacion
 
