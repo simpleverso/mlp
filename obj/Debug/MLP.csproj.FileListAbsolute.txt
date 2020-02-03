@@ -1,0 +1,6 @@
+C:\Users\gsantiago\Documents\GitHub\MLP\bin\Debug\MLP.exe.config
+C:\Users\gsantiago\Documents\GitHub\MLP\bin\Debug\MLP.exe
+C:\Users\gsantiago\Documents\GitHub\MLP\bin\Debug\MLP.pdb
+C:\Users\gsantiago\Documents\GitHub\MLP\obj\Debug\MLP.csprojAssemblyReference.cache
+C:\Users\gsantiago\Documents\GitHub\MLP\obj\Debug\MLP.exe
+C:\Users\gsantiago\Documents\GitHub\MLP\obj\Debug\MLP.pdb
