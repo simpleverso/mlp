@@ -9,14 +9,17 @@ class ejemplo
 	static void Main(string[] args)
 	{
 		double[,] patrones = { {0,0}, {0, 1},{1, 0},{1, 1}};
+		perceptron.C = 2;
 		perceptron.num_patrones = 4;
 		perceptron.numiter = 1000;
+		perceptron.emin = 0.01;
+		perceptron.alfa = 0.6;
+		perceptron.x = patrones;
 		
 		perceptron.entrenar();
 		
 		double[] x = new double[] { 0, 0};
-		double[] y;
-		y = perceptron.reconocer_pmc(x);
+		double[] y = perceptron.reconocer_pmc(x);
 		foreach (var item in y)
 		{
 			Console.WriteLine(item);
