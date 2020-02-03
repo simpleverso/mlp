@@ -3,7 +3,9 @@ Perceptron multicapa desde cero una implementacion en c# [**Simpleverso**].
 
 ## Dependencias
 
+```txt
 - Ninguna
+```
 
 <p float="left">
 	<img src="https://i.imgur.com/nF02pxn.jpg" width="49%" />
