@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,6 @@ using System.IO;
 
 namespace Aplicacion_perceptron
 {
-    //Clase para la red neuronal tipo perceptrón multicapa
     public class rna_pmc
     {
         private static int C, numiter, num_patrones;
@@ -25,100 +24,7 @@ namespace Aplicacion_perceptron
         private static double[] xmin;
         private static double[] ymax;
         private static double[] ymin;
-        //public static int Excepcion;
 
-        //Método para leer el archivo de datos *.pml
-        public static void leer_archivo_pmc(String nombre_archivo)
-        {
-            FileStream archivos;
-            StreamReader leer;
-
-            String texto;
-            String[] datos;
-
-            int i, j;
-
-            try
-            {
-                archivos = new FileStream(nombre_archivo, FileMode.Open, FileAccess.Read);
-                leer = new StreamReader(archivos);
-
-                //Se lee la primera línea que corresponde a la datos de la red
-                texto = leer.ReadLine();
-                datos = texto.Split(' ');
-
-                C = Convert.ToInt16(datos[0]);
-                n = new int[C + 1];
-
-                for (i = 1; i <= C; i++)
-                {
-                    n[i] = Convert.ToInt16(datos[i]);
-                }
-
-                //Se lee la segunda línea que corresponde al gama de aprendizaja
-                texto = leer.ReadLine();
-                datos = texto.Split(' ');
-                alfa = Convert.ToDouble(datos[0]);
-
-                //Se lee la tercera línea que corresponde al número de iteraciones
-                texto = leer.ReadLine();
-                datos = texto.Split('\n');
-                numiter = Convert.ToInt32(datos[0]);
-
-                //Se lee la cuarta línea que corresponde al error mínimo
-                texto = leer.ReadLine();
-                datos = texto.Split('\n');
-                emin = Convert.ToDouble(datos[0]);
-
-                //Se lee la quinta línea que corresponde al número total de patrones
-                texto = leer.ReadLine();
-                datos = texto.Split('\n');
-                num_patrones = Convert.ToInt32(datos[0]);
-
-                //A partir de esta línea se leen los patrones de entrada
-                texto = leer.ReadLine();
-                x = new double[num_patrones + 1, n[1] + 1];
-
-                for (i = 1; i <= num_patrones; i++)
-                {
-                    texto = leer.ReadLine();
-                    if (n[1] == 1)
-                        datos = texto.Split('\n');
-                    else
-                        datos = texto.Split('\t');
-                    for (j = 1; j <= n[1]; j++)
-                    {
-                        x[i, j] = Convert.ToDouble(datos[j - 1]);
-                    }
-                }
-
-                //A partir de esta línea se leen los patrones de salida
-                texto = leer.ReadLine();
-                y = new double[num_patrones + 1, n[C] + 1];
-                yd = new double[num_patrones + 1, n[C] + 1];
-
-                for (i = 1; i <= num_patrones; i++)
-                {
-                    texto = leer.ReadLine();
-                    if (n[C] == 1)
-                        datos = texto.Split('\n');
-                    else
-                        datos = texto.Split('\t');
-                    for (j = 1; j <= n[C]; j++)
-                    {
-                        y[i, j] = Convert.ToDouble(datos[j - 1]);
-                    }
-                }
-                leer.Close();
-            }
-            catch (Exception ex)
-            {
-                //Excepcion = 1;
-            }
-        }
-
-        //Método para entrenar con los patrones previamente abiertos
-        //El archivo entrenado se almacena en la ruta del archivo que se recibe como parámetro
         public static void entrenar_pmc(String nombre_archivo)
         {
             int i, j, k, c, aux, p;
@@ -277,14 +183,12 @@ namespace Aplicacion_perceptron
                     //Cálculculo de las delta.
 
                     //Caso a:
-
                     for (i = 1; i <= n[C]; i++)
                     {
                         delta[C, i] = -(y[p, i] - yd[p, i]) * yd[p, i] * (1 - yd[p, i]);
                     }
 
                     //Caso b:
-
                     for (c = C - 1; c > 1; c--)
                     {
                         for (j = 1; j <= n[c]; j++)
