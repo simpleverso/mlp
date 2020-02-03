@@ -9,6 +9,9 @@ class ejemplo
 	static void Main(string[] args)
 	{
 		double[,] patrones = { {0,0}, {0, 1},{1, 0},{1, 1}};
+		perceptron.num_patrones = 4;
+		perceptron.numiter = 1000;
+		
 		perceptron.entrenar();
 		
 		double[] x = new double[] { 0, 0};
@@ -41,7 +44,7 @@ public class perceptron
 	public static double[] ymax;
 	public static double[] ymin;
 
-	public static void entrenar(String nombre_archivo)
+	public static void entrenar()
 	{
 		int i, j, k, c, aux, p;
 		double error_total = 1;
