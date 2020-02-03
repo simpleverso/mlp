@@ -9,7 +9,7 @@ class ejemplo
 	static void Main(string[] args)
 	{
 		double[,] patrones = { {0,0}, {0, 1},{1, 0},{1, 1}};
-		double[,] salidas = { {0}, {1},{1},{0}};
+		double[,] salidas = { 0, 1,1,0};
 		int[] arquitectura = {2,3,1};
 		perceptron.C = 3;
 		perceptron.n = arquitectura;
@@ -17,13 +17,47 @@ class ejemplo
 		perceptron.numiter = 1000;
 		perceptron.emin = 0.01;
 		perceptron.alfa = 0.6;
-		perceptron.x = patrones;
+		x = new double[num_patrones + 1, perceptron.n[1] + 1]; //analizar
+		perceptron.x = x ;
 		perceptron.y = salidas;
 		
+//			
+//	 x = new double[num_patrones + 1, n[1] + 1];
+//
+//		for (i = 1; i <= num_patrones; i++)
+//		{
+//			texto = leer.ReadLine();
+//			if (n[1] == 1)
+//				datos = texto.Split('\n');
+//			else
+//				datos = texto.Split('\t');
+//			for (j = 1; j <= n[1]; j++)
+//			{
+//				x[i, j] = Convert.ToDouble(datos[j - 1]);
+//			}
+//		}
+//
+//		texto = leer.ReadLine();
+//		y = new double[num_patrones + 1, n[C] + 1];
+//		yd = new double[num_patrones + 1, n[C] + 1];
+//
+//		for (i = 1; i <= num_patrones; i++)
+//		{
+//			texto = leer.ReadLine();
+//			if (n[C] == 1)
+//				datos = texto.Split('\n');
+//			else
+//				datos = texto.Split('\t');
+//			for (j = 1; j <= n[C]; j++)
+//			{
+//				y[i, j] = Convert.ToDouble(datos[j - 1]);
+//			}
+//		}	
+
 		perceptron.entrenar();
 		
 		double[] x = new double[] { 0, 0};
-		double[] y = perceptron.reconocer_pmc(x);
+		double[] y = perceptron.Test(x);
 		foreach (var item in y)
 		{
 			Console.WriteLine(item);
@@ -60,7 +94,7 @@ public class perceptron
 
 		Random rand = new Random();
 
-		//Variables para almacenar los valores máximos y mínimos de entrada y salida
+		//máximos y mínimos de entrada y salida
 		xmax = new double[n[1] + 1];
 		xmin = new double[n[1] + 1];
 		ymax = new double[n[C] + 1];
@@ -118,38 +152,36 @@ public class perceptron
 				aux = n[i];
 		}
 
-		//Se asigna memmoria dinámica a los pesos y umbrales de acuerdo a la arquitectura de la red
+		//Se asigna memmoria dinámica a los pesos y umbrales segun la arquitectura de la red
 		winicial = new double[C, aux + 1, aux + 1];
 		w = new double[C, aux + 1, aux + 1];
 		u = new double[C + 1, aux + 1];
 		a = new double[C + 1, aux + 1];
 		delta = new double[C + 1, aux + 1];
 
-		//Seasignan valores aleatorios a los pesos
+		//Se asignan los pesos
 		for (c = 1; c <= C - 1; c++)
 		{
 			for (j = 1; j <= n[c]; j++)
 			{
 				for (i = 1; i <= n[c + 1]; i++)
 				{
-					//w[c, j, i] = rand.Next(100) / 100.0;
 					w[c, j, i] = rand.NextDouble();
 					winicial[c, j, i] = w[c, j, i];
 				}
 			}
 		}
 
-		//Se asignan valores de uno a los umbrales
+		//Se inician umbrales
 		for (c = 2; c <= C; c++)
 		{
 			for (i = 1; i <= n[c]; i++)
 			{
-				//u[c, i] = 1;
-				u[c, i] = rand.NextDouble();
+				u[c, i] = rand.NextDouble(); //u[c, i] = 1;
 			}
 		}
 
-		//Se normalizan los patrones de entrada y de salida
+		//Normalizacion de patrones entrada
 		for (i = 1; i <= n[1]; i++)
 		{
 			for (p = 1; p <= N; p++)
@@ -157,7 +189,8 @@ public class perceptron
 				x[p, i] = (1.0 / (xmax[i] - xmin[i])) * (x[p, i] - xmin[i]);
 			}
 		}
-
+		
+		//Normalizacion de patrones salida
 		for (i = 1; i <= n[C]; i++)
 		{
 			for (p = 1; p <= N; p++)
@@ -206,7 +239,7 @@ public class perceptron
 				error = 0.5 * error;
 				error_total += error;
 
-				//Cálculculo de las delta.
+				//Cálculo de las delta.
 
 				//Caso a:
 				for (i = 1; i <= n[C]; i++)
@@ -256,8 +289,8 @@ public class perceptron
 		}
 	}
 
-	//Método para clasificar un nuevo patron de entrada
-	public static double[] reconocer_pmc(double[] x)
+	//Test De la Red
+	public static double[] Test(double[] x)
 	{
 		int c, i, j, aux;
 		double[,] a;
