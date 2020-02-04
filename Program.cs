@@ -46,10 +46,10 @@ public class perceptron
 	public static double[,] u;
 	public static double[,] delta;
 
-	public static double[] xmax;
-	public static double[] xmin;
-	public static double[] ymax;
-	public static double[] ymin;
+	public double[] xmax;
+	public double[] xmin;
+	public double[] ymax;
+	public double[] ymin;
 
 	public static void entrenar()
 	{
@@ -116,10 +116,10 @@ public class perceptron
 //			}
 //		}
 
-xmax = { 0, 1, 1, 1, 1};
-xmin = { 0, 0, 0, 0, 0};
-ymax = { 0, 1, 1, 1, 1};
-ymin = { 0, 0, 0, 0, 0};
+		xmax = { 1.0, 1.0, 1.0, 1.0 };
+		xmin = { 0.0, 0.0, 0.0, 0.0 };
+		ymax = { 1.0, 1.0, 1.0, 1.0 };
+		ymin = { 0.0, 0.0, 0.0, 0.0 };
 
 		aux = 0;
 
