@@ -20,7 +20,6 @@ class ejemplo
 		perceptron.x = patrones;
 		perceptron.y = salidas;
 		
-		
 		perceptron.entrenar();
 		
 		double[] x = {0,0};
@@ -116,6 +115,11 @@ public class perceptron
 //				}
 //			}
 //		}
+
+xmax = { 0, 1, 1, 1, 1};
+xmin = { 0, 0, 0, 0, 0};
+ymax = { 0, 1, 1, 1, 1};
+ymin = { 0, 0, 0, 0, 0};
 
 		aux = 0;
 
