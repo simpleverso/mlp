@@ -67,55 +67,55 @@ public class perceptron
 
 		Random rand = new Random();
 
-		//máximos y mínimos de entrada y salida
-		xmax = new double[n[1] + 1];
-		xmin = new double[n[1] + 1];
-		ymax = new double[n[C] + 1];
-		ymin = new double[n[C] + 1];
+//		//máximos y mínimos de entrada y salida
+//		xmax = new double[n[1] + 1];
+//		xmin = new double[n[1] + 1];
+//		ymax = new double[n[C] + 1];
+//		ymin = new double[n[C] + 1];
 
-		for (i = 1; i <= n[1]; i++)
-		{
-			xmax[i] = 0;
-			xmin[i] = 10000;
-		}
+//		for (i = 1; i <= n[1]; i++)
+//		{
+//			xmax[i] = 0;
+//			xmin[i] = 10000;
+//		}
+//
+//		for (i = 1; i <= n[C]; i++)
+//		{
+//			ymax[i] = 0;
+//			ymin[i] = 10000;
+//		}
 
-		for (i = 1; i <= n[C]; i++)
-		{
-			ymax[i] = 0;
-			ymin[i] = 10000;
-		}
+//		//Se encuentras los valores máximos y mínimos de x
+//		for (i = 1; i <= n[1]; i++)
+//		{
+//			for (p = 1; p <= N; p++)
+//			{
+//				if (xmax[i] < x[p, i])
+//				{
+//					xmax[i] = x[p, i];
+//				}
+//				if (xmin[i] > x[p, i])
+//				{
+//					xmin[i] = x[p, i];
+//				}
+//			}
+//		}
 
-		//Se encuentras los valores máximos y mínimos de x
-		for (i = 1; i <= n[1]; i++)
-		{
-			for (p = 1; p <= N; p++)
-			{
-				if (xmax[i] < x[p, i])
-				{
-					xmax[i] = x[p, i];
-				}
-				if (xmin[i] > x[p, i])
-				{
-					xmin[i] = x[p, i];
-				}
-			}
-		}
-
-		//Se encuentran los valores máximos y mínimos de y
-		for (i = 1; i <= n[C]; i++)
-		{
-			for (p = 1; p <= N; p++)
-			{
-				if (ymax[i] < y[p, i])
-				{
-					ymax[i] = y[p, i];
-				}
-				if (ymin[i] > y[p, i])
-				{
-					ymin[i] = y[p, i];
-				}
-			}
-		}
+//		//Se encuentran los valores máximos y mínimos de y
+//		for (i = 1; i <= n[C]; i++)
+//		{
+//			for (p = 1; p <= N; p++)
+//			{
+//				if (ymax[i] < y[p, i])
+//				{
+//					ymax[i] = y[p, i];
+//				}
+//				if (ymin[i] > y[p, i])
+//				{
+//					ymin[i] = y[p, i];
+//				}
+//			}
+//		}
 
 		aux = 0;
 
