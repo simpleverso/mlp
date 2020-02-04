@@ -158,23 +158,23 @@ public class perceptron
 			}
 		}
 
-		//Normalizacion de patrones entrada
-		for (i = 1; i <= n[1]; i++)
-		{
-			for (p = 1; p <= N; p++)
-			{
-				x[p, i] = (1.0 / (xmax[i] - xmin[i])) * (x[p, i] - xmin[i]);
-			}
-		}
-		
-		//Normalizacion de patrones salida
-		for (i = 1; i <= n[C]; i++)
-		{
-			for (p = 1; p <= N; p++)
-			{
-				y[p, i] = (1.0 / (ymax[i] - ymin[i])) * (y[p, i] - ymin[i]);
-			}
-		}
+//		//Normalizacion de patrones entrada
+//		for (i = 1; i <= n[1]; i++)
+//		{
+//			for (p = 1; p <= N; p++)
+//			{
+//				x[p, i] = (1.0 / (xmax[i] - xmin[i])) * (x[p, i] - xmin[i]);
+//			}
+//		}
+//		
+//		//Normalizacion de patrones salida
+//		for (i = 1; i <= n[C]; i++)
+//		{
+//			for (p = 1; p <= N; p++)
+//			{
+//				y[p, i] = (1.0 / (ymax[i] - ymin[i])) * (y[p, i] - ymin[i]);
+//			}
+//		}
 
 		k = 0;
 		while (k < numiter && error_total >= emin)
