@@ -1,4 +1,4 @@
-# MLP - Multi Layer Perceptron
+# MLP - Multi Layer Perceptron (under construction)
 Perceptron multicapa desde cero una implementacion en c# [**Simpleverso**].
 
 ## Dependencias
